@@ -1,5 +1,3 @@
-// js/script.js
-// Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize all functionality
   initThemeSelector();
@@ -542,9 +540,6 @@ function initCart() {
 
   // Add item to cart
   function addToCart(productId) {
-    // In a real application, this would fetch product details from a database
-    // For now, we'll use a simplified approach
-
     const products = {
       1: {
         name: "Professional DSLR Camera",
@@ -738,7 +733,6 @@ function initCart() {
       return;
     }
 
-    // In a real application, this would redirect to checkout page
     alert("Proceeding to checkout!");
     closeCartFunc();
   });
@@ -792,7 +786,7 @@ function initSearch() {
   function performSearch() {
     const query = searchInput.value.trim();
     if (query) {
-      // In a real application, this would perform an actual search
+      // this would perform an actual search
       console.log("Searching for:", query);
       closeSearchFunc();
       searchInput.value = "";
