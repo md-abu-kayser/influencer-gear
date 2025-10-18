@@ -3,362 +3,810 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Influencer</title>
+    <title>Influencer Gear | Professional Equipment for Content Creators</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <!-- header tag & navbar -->
-    <header>
-      <nav class="navbar display-flex">
-        <h3 class="brand text-primary">Influencer Products</h3>
-        <!-- nav links  -->
-        <ul class="nav-links display-flex">
-          <li class="nav-item">
-            <a href="#" class="nav-link text-primary">Products</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-primary">Sign Up</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-primary">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link text-primary">Login</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"
-              ><span class="text-primary"
-                ><i class="fa-solid fa-magnifying-glass"></i></span
-            ></a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"
-              ><span class="text-primary"
-                ><i class="fa-solid fa-cart-shopping"></i></span
-            ></a>
-          </li>
-        </ul>
-      </nav>
-      <div class="banner-content display-flex">
-        <div class="banner-info">
-          <h2 class="banner-title">Start your Journey as Influencer</h2>
-          <p class="text-primary">
-            On the third anniversary of Russia’s invasion of Ukraine we return
-            to the question we asked our correspondents then. Why should the
-            world care?
-          </p>
-          <button class="btn-primary">
-            Prebook now
-            <span id="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
-          </button>
-        </div>
-        <div class="banner-img">
-          <img
-            src="images/main-camera.png"
-            alt="this is real world DSRl camera"
-          />
-        </div>
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+      <div class="theme-options">
+        <div class="theme-option" data-theme="default"></div>
+        <div class="theme-option" data-theme="ocean"></div>
+        <div class="theme-option" data-theme="forest"></div>
+        <div class="theme-option" data-theme="sunset"></div>
+        <div class="theme-option" data-theme="royal"></div>
       </div>
+      <button class="theme-toggle">
+        <i class="fas fa-palette"></i>
+      </button>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+      <input type="checkbox" id="dark-mode-switch" class="checkbox" />
+      <label for="dark-mode-switch" class="toggle">
+        <span class="toggle-thumb">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </span>
+      </label>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="#" class="brand-link">
+              <i class="fas fa-camera-retro"></i>
+              <span>InfluencerGear</span>
+            </a>
+          </div>
+
+          <div class="nav-menu">
+            <ul class="nav-links">
+              <li class="nav-item">
+                <a href="#home" class="nav-link active">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#products" class="nav-link">Products</a>
+              </li>
+              <li class="nav-item">
+                <a href="#collections" class="nav-link">Collections</a>
+              </li>
+              <li class="nav-item">
+                <a href="#features" class="nav-link">Features</a>
+              </li>
+              <li class="nav-item">
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a href="#blog" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+              </li>
+            </ul>
+
+            <div class="nav-actions">
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+              <button class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">3</span>
+              </button>
+              <button class="auth-btn">Sign In</button>
+            </div>
+          </div>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
     </header>
-    <!-- main tag  -->
-    <main>
-      <section class="sponsors">
-        <div class="sponsor-company">
-          <img
-            src="logos/Alibaba.svg"
-            alt="It is Alibaba company and they are sell all Products"
-          /><img src="logos/Amazon.svg" alt="The Amazon company awesome" /><img
-            src="logos/Daraz.pk Logo.svg"
-            alt=""
-          /><img src="logos/Ebay.svg" alt="" /><img
-            src="logos/Rakuten.svg"
-            alt=""
-          /><img src="logos/Target.svg" alt="" /><img
-            src="logos/Walmart.svg"
-            alt=""
-          />
-        </div>
-      </section>
 
-      <!-- popular collection  -->
-      <section class="popular-collection">
-        <div class="popular-collection-title">
-          <h2 class="popular-title">Popular Collection</h2>
-        </div>
-        <div class="product-area">
-          <div class="product-box-model">
-            <div class="product-item">
-              <img
-                class="product-img"
-                src="images/action.png"
-                alt="this is action product"
-              />
-              <h2 class="product-name">Action Camera</h2>
-              <h3 class="product-price">$400.00</h3>
-              <div class="product-ratting">
-                <span id="product-star"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star-half-stroke"></i
-                ></span>
-                <span id="product-star-rated text-primary">4.99</span>
-              </div>
-              <p class="text-primary">
-                Wordwide shifting available Buyers protection possible!
-              </p>
-            </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>New Collection 2023</span>
           </div>
-          <div class="product-box-model">
-            <div class="product-item">
-              <img
-                class="product-img"
-                src="images/airpod.png"
-                alt="this is action product"
-              />
-              <h2 class="product-name">Action Camera</h2>
-              <h3 class="product-price">$400.00</h3>
-              <div class="product-ratting">
-                <span id="product-star"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star-half-stroke"></i
-                ></span>
-                <span id="product-star-rated text-primary">4.99</span>
-              </div>
-              <p class="text-primary">
-                Wordwide shifting available Buyers protection possible!
-              </p>
-            </div>
-          </div>
-          <div class="product-box-model">
-            <div class="product-item">
-              <img
-                class="product-img"
-                src="images/camera.png"
-                alt="this is action product"
-              />
-              <h2 class="product-name">Action Camera</h2>
-              <h3 class="product-price">$400.00</h3>
-              <div class="product-ratting">
-                <span id="product-star"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star-half-stroke"></i
-                ></span>
-                <span id="product-star-rated text-primary">4.99</span>
-              </div>
-              <p class="text-primary">
-                Wordwide shifting available Buyers protection possible!
-              </p>
-            </div>
-          </div>
-          <div class="product-box-model">
-            <div class="product-item">
-              <img
-                class="product-img"
-                src="images/drone.png"
-                alt="this is action product"
-              />
-              <h2 class="product-name">Action Camera</h2>
-              <h3 class="product-price">$400.00</h3>
-              <div class="product-ratting">
-                <span id="product-star"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star-half-stroke"></i
-                ></span>
-                <span id="product-star-rated text-primary">4.99</span>
-              </div>
-              <p class="text-primary">
-                Wordwide shifting available Buyers protection possible!
-              </p>
-            </div>
-          </div>
-          <div class="product-box-model">
-            <div class="product-item">
-              <img
-                class="product-img"
-                src="images/lights.png"
-                alt="this is action product"
-              />
-              <h2 class="product-name">Action Camera</h2>
-              <h3 class="product-price">$400.00</h3>
-              <div class="product-ratting">
-                <span id="product-star"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star-half-stroke"></i
-                ></span>
-                <span id="product-star-rated text-primary">4.99</span>
-              </div>
-              <p class="text-primary">
-                Wordwide shifting available Buyers protection possible!
-              </p>
-            </div>
-          </div>
-          <div class="product-box-model">
-            <div class="product-item">
-              <img
-                class="product-img"
-                src="images/main-camera.png"
-                alt="this is action product"
-              />
-              <h2 class="product-name">Action Camera</h2>
-              <h3 class="product-price">$400.00</h3>
-              <div class="product-ratting">
-                <span id="product-star"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star-half-stroke"></i
-                ></span>
-                <span id="product-star-rated text-primary">4.99</span>
-              </div>
-              <p class="text-primary">
-                Wordwide shifting available Buyers protection possible!
-              </p>
-            </div>
-          </div>
-          <div class="product-box-model">
-            <div class="product-item">
-              <img
-                class="product-img"
-                src="images/mic.png"
-                alt="this is action product"
-              />
-              <h2 class="product-name">Action Camera</h2>
-              <h3 class="product-price">$400.00</h3>
-              <div class="product-ratting">
-                <span id="product-star"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star-half-stroke"></i
-                ></span>
-                <span id="product-star-rated text-primary">4.99</span>
-              </div>
-              <p class="text-primary">
-                Wordwide shifting available Buyers protection possible!
-              </p>
-            </div>
-          </div>
-          <div class="product-box-model">
-            <div class="product-item">
-              <img
-                class="product-img"
-                src="images/setup.png"
-                alt="this is action product"
-              />
-              <h2 class="product-name">Action Camera</h2>
-              <h3 class="product-price">$400.00</h3>
-              <div class="product-ratting">
-                <span id="product-star"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star-half-stroke"></i
-                ></span>
-                <span id="product-star-rated text-primary">4.99</span>
-              </div>
-              <p class="text-primary">
-                Wordwide shifting available Buyers protection possible!
-              </p>
-            </div>
-          </div>
-          <div class="product-box-model">
-            <div class="product-item">
-              <img
-                class="product-img"
-                src="images/tripod.png"
-                alt="this is action product"
-              />
-              <h2 class="product-name">Action Camera</h2>
-              <h3 class="product-price">$400.00</h3>
-              <div class="product-ratting">
-                <span id="product-star"
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star"></i
-                  ><i class="fa-solid fa-star-half-stroke"></i
-                ></span>
-                <span id="product-star-rated text-primary">4.99</span>
-              </div>
-              <p class="text-primary">
-                Wordwide shifting available Buyers protection possible!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- features production is on -->
-      <section class="features">
-        <div class="features-product display-flex">
-          <div class="features-img">
-            <img
-              src="images/gear.png"
-              alt="This images upcoming features added"
-              class="img-fluid"
-            />
-          </div>
-          <div class="features-details">
-            <h2 class="feature-title">Featured products at one place</h2>
-            <p class="text-primary text-description">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
-            </p>
-            <button class="btn">
-              Prebook now
-              <span id="btn-arrow"
-                ><i class="fa-solid fa-arrow-right"></i
-              ></span>
+          <h1 class="hero-title">
+            Elevate Your <span class="highlight">Content</span> Creation Game
+          </h1>
+          <p class="hero-description">
+            Discover professional-grade equipment designed specifically for
+            influencers and content creators. From cameras to lighting, we have
+            everything you need to produce stunning content.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary">
+              <span>Explore Products</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+            <button class="btn btn-secondary">
+              <span>Watch Demo</span>
+              <i class="fas fa-play-circle"></i>
             </button>
           </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <h3>10K+</h3>
+              <p>Happy Customers</p>
+            </div>
+            <div class="stat">
+              <h3>500+</h3>
+              <p>Premium Products</p>
+            </div>
+            <div class="stat">
+              <h3>24/7</h3>
+              <p>Customer Support</p>
+            </div>
+          </div>
         </div>
-      </section>
-    </main>
-    <!-- footer section is here  -->
-    <footer>
-      <div class="footer-info display-flex">
-        <div class="footer-details">
-          <h2 class="footer-title">Influencer products</h2>
-          <p>
-            <small id="footer-copy">Copyright © 2020 influencer products</small>
+
+        <div class="hero-visual">
+          <div class="floating-cards">
+            <div class="card card-1">
+              <img src="images/main-camera.png" alt="DSLR Camera" />
+            </div>
+            <div class="card card-2">
+              <img src="images/drone.png" alt="Drone" />
+            </div>
+            <div class="card card-3">
+              <img src="images/lights.png" alt="Lighting" />
+            </div>
+            <div class="card card-4">
+              <img src="images/mic.png" alt="Microphone" />
+            </div>
+          </div>
+          <div class="hero-circle">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <p>Scroll to explore</p>
+      </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors">
+      <div class="container">
+        <h2 class="section-subtitle">Trusted by Industry Leaders</h2>
+        <div class="sponsor-grid">
+          <div class="sponsor-logo">
+            <img src="logos/Alibaba.svg" alt="Alibaba" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="logos/Amazon.svg" alt="Amazon" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="logos/Daraz.pk Logo.svg" alt="Daraz" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="logos/Ebay.svg" alt="Ebay" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="logos/Rakuten.svg" alt="Rakuten" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="logos/Target.svg" alt="Target" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="logos/Walmart.svg" alt="Walmart" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Products</h2>
+          <p class="section-description">
+            Curated selection of professional equipment for content creators
           </p>
-          <p id="footer-description">All rights reserved</p>
-          <div class="footer-social-media">
-            <span class="footer-icon"
-              ><i class="fa-brands fa-instagram"></i></span
-            ><span class="footer-icon"
-              ><i class="fa-solid fa-vector-square"></i></span
-            ><span class="footer-icon"
-              ><i class="fa-brands fa-twitter"></i></span
-            ><span class="footer-icon"
-              ><i class="fa-brands fa-youtube"></i
-            ></span>
+        </div>
+
+        <div class="product-filters">
+          <button class="filter-btn active" data-filter="all">
+            All Products
+          </button>
+          <button class="filter-btn" data-filter="camera">Cameras</button>
+          <button class="filter-btn" data-filter="audio">Audio</button>
+          <button class="filter-btn" data-filter="lighting">Lighting</button>
+          <button class="filter-btn" data-filter="accessories">
+            Accessories
+          </button>
+        </div>
+
+        <div class="products-grid">
+          <!-- Product items will be dynamically generated by JavaScript -->
+        </div>
+
+        <div class="section-footer">
+          <button class="btn btn-outline">
+            <span>View All Products</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="collections">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Popular Collections</h2>
+          <p class="section-description">
+            Handpicked bundles for specific content creation needs
+          </p>
+        </div>
+
+        <div class="collections-grid">
+          <div class="collection-card">
+            <div class="collection-image">
+              <img src="images/setup.png" alt="Vlogging Setup" />
+              <div class="collection-overlay">
+                <button class="btn btn-primary">View Collection</button>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3>Vlogging Essentials</h3>
+              <p>Complete setup for professional vlogging</p>
+              <div class="collection-price">
+                <span class="price">$1,299.99</span>
+                <span class="original-price">$1,599.99</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="collection-card">
+            <div class="collection-image">
+              <img src="images/action.png" alt="Action Sports" />
+              <div class="collection-overlay">
+                <button class="btn btn-primary">View Collection</button>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3>Action Sports Bundle</h3>
+              <p>Capture all the action in stunning detail</p>
+              <div class="collection-price">
+                <span class="price">$899.99</span>
+                <span class="original-price">$1,099.99</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="collection-card">
+            <div class="collection-image">
+              <img src="images/lights.png" alt="Studio Lighting" />
+              <div class="collection-overlay">
+                <button class="btn btn-primary">View Collection</button>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3>Studio Lighting Kit</h3>
+              <p>Professional lighting for perfect shots</p>
+              <div class="collection-price">
+                <span class="price">$499.99</span>
+                <span class="original-price">$649.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <div class="features-container">
+          <div class="features-content">
+            <h2 class="section-title">Designed for Creators, by Creators</h2>
+            <p class="section-description">
+              Our products are carefully selected and tested by professional
+              content creators to ensure they meet the highest standards.
+            </p>
+
+            <div class="features-list">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="feature-text">
+                  <h3>Premium Quality</h3>
+                  <p>
+                    All products undergo rigorous quality checks to ensure
+                    durability and performance.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-shipping-fast"></i>
+                </div>
+                <div class="feature-text">
+                  <h3>Fast Shipping</h3>
+                  <p>
+                    Free expedited shipping on orders over $99. Get your gear in
+                    2-3 business days.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-headset"></i>
+                </div>
+                <div class="feature-text">
+                  <h3>Expert Support</h3>
+                  <p>
+                    Our team of content creation experts is available 24/7 to
+                    help you choose the right gear.
+                  </p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="feature-text">
+                  <h3>Easy Returns</h3>
+                  <p>
+                    Not satisfied? Return any product within 30 days for a full
+                    refund, no questions asked.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary">
+              <span>Learn More About Us</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="features-visual">
+            <div class="feature-showcase">
+              <img src="images/gear.png" alt="Influencer Gear" />
+              <div class="floating-tag tag-1">
+                <span>4K Resolution</span>
+              </div>
+              <div class="floating-tag tag-2">
+                <span>Wireless</span>
+              </div>
+              <div class="floating-tag tag-3">
+                <span>Long Battery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What Creators Say</h2>
+          <p class="section-description">
+            Hear from influencers who transformed their content with our
+            products
+          </p>
+        </div>
+
+        <div class="testimonials-slider">
+          <div class="testimonials-track">
+            <!-- Testimonial cards will be dynamically generated by JavaScript -->
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="slider-dots">
+            <!-- Dots will be dynamically generated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Content Creation Tips</h2>
+          <p class="section-description">
+            Expert advice to help you create better content
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-image">
+              <img src="images/camera.png" alt="Camera Tips" />
+              <div class="blog-category">Tutorial</div>
+            </div>
+            <div class="blog-content">
+              <h3>10 Camera Settings Every Influencer Should Know</h3>
+              <p>
+                Master your camera with these essential settings that will
+                elevate your content quality.
+              </p>
+              <div class="blog-meta">
+                <div class="author">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/43.jpg"
+                    alt="Author"
+                  />
+                  <span>Sarah Johnson</span>
+                </div>
+                <div class="date">May 15, 2023</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-image">
+              <img src="images/lights.png" alt="Lighting Setup" />
+              <div class="blog-category">Guide</div>
+            </div>
+            <div class="blog-content">
+              <h3>Perfect Lighting Setup for Home Studios</h3>
+              <p>
+                Transform your space with these professional lighting techniques
+                that don't break the bank.
+              </p>
+              <div class="blog-meta">
+                <div class="author">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    alt="Author"
+                  />
+                  <span>Michael Chen</span>
+                </div>
+                <div class="date">April 28, 2023</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-image">
+              <img src="images/action.png" alt="Action Content" />
+              <div class="blog-category">Tips</div>
+            </div>
+            <div class="blog-content">
+              <h3>Creating Engaging Action Content</h3>
+              <p>
+                Learn how to capture and edit dynamic action shots that keep
+                your audience engaged.
+              </p>
+              <div class="blog-meta">
+                <div class="author">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/65.jpg"
+                    alt="Author"
+                  />
+                  <span>Emma Rodriguez</span>
+                </div>
+                <div class="date">June 3, 2023</div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-footer">
+          <button class="btn btn-outline">
+            <span>View All Articles</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-container">
+          <div class="newsletter-content">
+            <h2>Stay Updated with the Latest Gear</h2>
+            <p>
+              Subscribe to our newsletter and be the first to know about new
+              products, exclusive deals, and content creation tips.
+            </p>
+          </div>
+          <div class="newsletter-form">
+            <form>
+              <div class="input-group">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  required
+                />
+                <button type="submit" class="btn btn-primary">
+                  <span>Subscribe</span>
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+              <div class="form-note">
+                <i class="fas fa-lock"></i>
+                <span>We respect your privacy. Unsubscribe at any time.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-description">
+            Have questions? Our team is here to help you choose the perfect
+            gear.
+          </p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Call Us</h3>
+                <p>+1 (555) 123-4567</p>
+                <span>Mon-Fri from 8am to 6pm</span>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email Us</h3>
+                <p>support@influencergear.com</p>
+                <span>We'll respond within 24 hours</span>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Visit Us</h3>
+                <p>123 Creator Street, Studio City, CA 91604</p>
+                <span>Showroom open Mon-Sat 10am-7pm</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-brand">
+              <a href="#" class="brand-link">
+                <i class="fas fa-camera-retro"></i>
+                <span>InfluencerGear</span>
+              </a>
+            </div>
+            <p class="footer-description">
+              Your one-stop shop for professional content creation equipment. We
+              provide top-quality gear for influencers, vloggers, and creators
+              worldwide.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Shop</h3>
+            <ul class="footer-links">
+              <li><a href="#">Cameras</a></li>
+              <li><a href="#">Lenses</a></li>
+              <li><a href="#">Lighting</a></li>
+              <li><a href="#">Audio</a></li>
+              <li><a href="#">Accessories</a></li>
+              <li><a href="#">Bundles</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Warranty</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Size Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Company</h3>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+              <li><a href="#">Student Discount</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Stay Connected</h3>
+            <p>
+              Subscribe to our newsletter for the latest updates and exclusive
+              offers.
+            </p>
+            <div class="footer-newsletter">
+              <form>
+                <div class="input-group">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    required
+                  />
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            <p>&copy; 2023 InfluencerGear. All rights reserved.</p>
+          </div>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
           </div>
         </div>
       </div>
     </footer>
-    <!-- font awesome used -->
-    <script
-      src="https://kit.fontawesome.com/4ee108a205.js"
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button class="close-cart">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-content">
+        <!-- Cart items will be dynamically generated by JavaScript -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span class="total-price">$0.00</span>
+        </div>
+        <button class="btn btn-primary checkout-btn">
+          Proceed to Checkout
+        </button>
+        <button class="btn btn-outline continue-shopping">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <!-- Search Modal -->
+    <div class="search-modal">
+      <div class="search-container">
+        <button class="close-search">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="search-content">
+          <h2>What are you looking for?</h2>
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search products, categories, brands..."
+            />
+            <button class="search-submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <div class="search-suggestions">
+            <h3>Popular Searches</h3>
+            <div class="suggestion-tags">
+              <a href="#">DSLR Cameras</a>
+              <a href="#">Studio Lighting</a>
+              <a href="#">Wireless Microphones</a>
+              <a href="#">Camera Lenses</a>
+              <a href="#">Camera Tripods</a>
+              <a href="#">Action Cameras</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Loading Animation -->
+    <div class="loading-screen">
+      <div class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">InfluencerGear</div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
