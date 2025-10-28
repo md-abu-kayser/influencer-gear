@@ -1,5 +1,6 @@
+// JavaScript Full Code Here
+// ----------------------------------------------------------------------------------------->
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize all functionality
   initThemeSelector();
   initDarkMode();
   initNavigation();
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initAnimations();
 });
 
-// Theme Selector Functionality
+// Theme
 function initThemeSelector() {
   const themeToggle = document.querySelector(".theme-toggle");
   const themeOptions = document.querySelectorAll(".theme-option");
@@ -28,23 +29,19 @@ function initThemeSelector() {
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem("selectedTheme", theme);
 
-      // Close theme selector
       document.querySelector(".theme-selector").classList.remove("active");
     });
   });
 
-  // Load saved theme from localStorage
   const savedTheme = localStorage.getItem("selectedTheme");
   if (savedTheme) {
     document.documentElement.setAttribute("data-theme", savedTheme);
   }
 }
 
-// Dark Mode Toggle Functionality
 function initDarkMode() {
   const darkModeToggle = document.getElementById("dark-mode-switch");
 
-  // Check for saved dark mode preference
   const isDarkMode = localStorage.getItem("darkMode") === "true";
 
   if (isDarkMode) {
@@ -63,7 +60,7 @@ function initDarkMode() {
   });
 }
 
-// Navigation Functionality
+// Navigation
 function initNavigation() {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
@@ -81,13 +78,11 @@ function initNavigation() {
       navMenu.classList.remove("active");
       document.body.classList.remove("no-scroll");
 
-      // Update active link
       navLinks.forEach((l) => l.classList.remove("active"));
       this.classList.add("active");
     });
   });
 
-  // Close menu when clicking outside
   document.addEventListener("click", function (event) {
     if (!event.target.closest(".nav-container")) {
       hamburger.classList.remove("active");
@@ -97,12 +92,10 @@ function initNavigation() {
   });
 }
 
-// Product Filters Functionality
 function initProductFilters() {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const productsGrid = document.querySelector(".products-grid");
 
-  // Sample product data
   const products = [
     {
       id: 1,
@@ -285,11 +278,9 @@ function initProductFilters() {
       productsGrid.appendChild(productCard);
     });
 
-    // Add event listeners to new buttons
     attachProductEventListeners();
   }
 
-  // Generate star rating HTML
   function generateStarRating(rating) {
     let stars = "";
     const fullStars = Math.floor(rating);
@@ -311,16 +302,13 @@ function initProductFilters() {
     return stars;
   }
 
-  // Attach event listeners to product buttons
   function attachProductEventListeners() {
-    // Add to cart buttons
     const addToCartButtons = document.querySelectorAll(".add-to-cart");
     addToCartButtons.forEach((button) => {
       button.addEventListener("click", function () {
         const productId = this.getAttribute("data-id");
         addToCart(parseInt(productId));
 
-        // Show feedback
         this.innerHTML = '<span>Added!</span> <i class="fas fa-check"></i>';
         this.style.backgroundColor = "#27ae60";
 
@@ -332,22 +320,18 @@ function initProductFilters() {
       });
     });
 
-    // Quick view buttons
     const quickViewButtons = document.querySelectorAll(".quick-view");
     quickViewButtons.forEach((button) => {
       button.addEventListener("click", function () {
         const productId = this.getAttribute("data-id");
-        // In a real application, this would open a product quick view modal
         console.log("Quick view product:", productId);
       });
     });
 
-    // Wishlist buttons
     const wishlistButtons = document.querySelectorAll(".add-wishlist");
     wishlistButtons.forEach((button) => {
       button.addEventListener("click", function () {
         const productId = this.getAttribute("data-id");
-        // In a real application, this would add the product to a wishlist
         this.innerHTML = '<i class="fas fa-heart" style="color: #e02c6d;"></i>';
 
         setTimeout(() => {
@@ -357,31 +341,25 @@ function initProductFilters() {
     });
   }
 
-  // Filter button event listeners
   filterButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      // Update active filter button
       filterButtons.forEach((btn) => btn.classList.remove("active"));
       this.classList.add("active");
 
-      // Filter products
       const filter = this.getAttribute("data-filter");
       renderProducts(filter);
     });
   });
 
-  // Initial render
   renderProducts();
 }
 
-// Testimonials Slider Functionality
 function initTestimonialsSlider() {
   const track = document.querySelector(".testimonials-track");
   const dotsContainer = document.querySelector(".slider-dots");
   const prevButton = document.querySelector(".slider-btn.prev");
   const nextButton = document.querySelector(".slider-btn.next");
 
-  // Sample testimonial data
   const testimonials = [
     {
       id: 1,
@@ -415,13 +393,11 @@ function initTestimonialsSlider() {
 
   let currentSlide = 0;
 
-  // Render testimonials
   function renderTestimonials() {
     track.innerHTML = "";
     dotsContainer.innerHTML = "";
 
     testimonials.forEach((testimonial, index) => {
-      // Create testimonial card
       const testimonialCard = document.createElement("div");
       testimonialCard.className = "testimonial-card";
       testimonialCard.innerHTML = `
@@ -441,13 +417,11 @@ function initTestimonialsSlider() {
 
       track.appendChild(testimonialCard);
 
-      // Create dot
       const dot = document.createElement("div");
       dot.className = `slider-dot ${index === currentSlide ? "active" : ""}`;
       dot.setAttribute("data-index", index);
       dotsContainer.appendChild(dot);
 
-      // Dot click event
       dot.addEventListener("click", function () {
         goToSlide(parseInt(this.getAttribute("data-index")));
       });
@@ -456,18 +430,15 @@ function initTestimonialsSlider() {
     updateSliderPosition();
   }
 
-  // Update slider position
   function updateSliderPosition() {
     track.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-    // Update dots
     const dots = document.querySelectorAll(".slider-dot");
     dots.forEach((dot, index) => {
       dot.classList.toggle("active", index === currentSlide);
     });
   }
 
-  // Go to specific slide
   function goToSlide(slideIndex) {
     currentSlide = slideIndex;
     updateSliderPosition();
@@ -479,32 +450,26 @@ function initTestimonialsSlider() {
     updateSliderPosition();
   }
 
-  // Previous slide
   function prevSlide() {
     currentSlide =
       (currentSlide - 1 + testimonials.length) % testimonials.length;
     updateSliderPosition();
   }
 
-  // Event listeners
   prevButton.addEventListener("click", prevSlide);
   nextButton.addEventListener("click", nextSlide);
 
-  // Auto advance slides
   let slideInterval = setInterval(nextSlide, 5000);
 
-  // Pause on hover
   const slider = document.querySelector(".testimonials-slider");
   slider.addEventListener("mouseenter", () => clearInterval(slideInterval));
   slider.addEventListener("mouseleave", () => {
     slideInterval = setInterval(nextSlide, 5000);
   });
 
-  // Initial render
   renderTestimonials();
 }
 
-// Shopping Cart Functionality
 function initCart() {
   const cartBtn = document.querySelector(".cart-btn");
   const cartSidebar = document.querySelector(".cart-sidebar");
@@ -517,10 +482,8 @@ function initCart() {
 
   let cartItems = [];
 
-  // Open cart
   cartBtn.addEventListener("click", openCart);
 
-  // Close cart
   closeCart.addEventListener("click", closeCartFunc);
   continueShopping.addEventListener("click", closeCartFunc);
   cartOverlay.addEventListener("click", closeCartFunc);
@@ -538,7 +501,7 @@ function initCart() {
     document.body.classList.remove("no-scroll");
   }
 
-  // Add item to cart
+  // Add Item To Cart
   function addToCart(productId) {
     const products = {
       1: {
@@ -586,7 +549,6 @@ function initCart() {
 
     const product = products[productId];
 
-    // Check if product is already in cart
     const existingItem = cartItems.find((item) => item.id === productId);
 
     if (existingItem) {
@@ -603,20 +565,17 @@ function initCart() {
 
     updateCartUI();
 
-    // If cart is open, update the display
     if (cartSidebar.classList.contains("active")) {
       renderCartItems();
     }
   }
 
-  // Remove item from cart
   function removeFromCart(productId) {
     cartItems = cartItems.filter((item) => item.id !== productId);
     updateCartUI();
     renderCartItems();
   }
 
-  // Update item quantity
   function updateQuantity(productId, newQuantity) {
     const item = cartItems.find((item) => item.id === productId);
 
@@ -631,13 +590,10 @@ function initCart() {
     }
   }
 
-  // Update cart UI (count and total)
   function updateCartUI() {
-    // Update cart count
     const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
 
-    // Update total price
     const total = cartItems.reduce(
       (sum, item) => sum + item.price * item.quantity,
       0
@@ -645,7 +601,6 @@ function initCart() {
     totalPrice.textContent = `$${total.toFixed(2)}`;
   }
 
-  // Render cart items
   function renderCartItems() {
     cartContent.innerHTML = "";
 
@@ -692,7 +647,6 @@ function initCart() {
       cartContent.appendChild(cartItem);
     });
 
-    // Add event listeners to cart item buttons
     const decreaseButtons = document.querySelectorAll(".quantity-btn.decrease");
     const increaseButtons = document.querySelectorAll(".quantity-btn.increase");
     const removeButtons = document.querySelectorAll(".remove-item");
@@ -725,7 +679,6 @@ function initCart() {
     });
   }
 
-  // Checkout button
   const checkoutBtn = document.querySelector(".checkout-btn");
   checkoutBtn.addEventListener("click", function () {
     if (cartItems.length === 0) {
@@ -737,11 +690,9 @@ function initCart() {
     closeCartFunc();
   });
 
-  // Make addToCart function globally available
   window.addToCart = addToCart;
 }
 
-// Search Functionality
 function initSearch() {
   const searchBtn = document.querySelector(".search-btn");
   const searchModal = document.querySelector(".search-modal");
@@ -754,7 +705,6 @@ function initSearch() {
     searchModal.classList.add("active");
     document.body.classList.add("no-scroll");
 
-    // Focus on search input
     setTimeout(() => {
       document.querySelector(".search-bar input").focus();
     }, 300);
@@ -765,14 +715,12 @@ function initSearch() {
     document.body.classList.remove("no-scroll");
   }
 
-  // Close search when clicking outside
   searchModal.addEventListener("click", function (event) {
     if (event.target === searchModal) {
       closeSearchFunc();
     }
   });
 
-  // Search functionality
   const searchInput = document.querySelector(".search-bar input");
   const searchSubmit = document.querySelector(".search-submit");
 
@@ -786,22 +734,18 @@ function initSearch() {
   function performSearch() {
     const query = searchInput.value.trim();
     if (query) {
-      // this would perform an actual search
       console.log("Searching for:", query);
       closeSearchFunc();
       searchInput.value = "";
 
-      // Show search results (simulated)
       alert(`Search results for: ${query}`);
     }
   }
 }
 
-// Scroll Effects
 function initScrollEffects() {
   const backToTop = document.querySelector(".back-to-top");
 
-  // Show/hide back to top button
   window.addEventListener("scroll", function () {
     if (window.pageYOffset > 300) {
       backToTop.classList.add("visible");
@@ -809,7 +753,6 @@ function initScrollEffects() {
       backToTop.classList.remove("visible");
     }
 
-    // Header shadow on scroll
     const header = document.querySelector(".header");
     if (window.pageYOffset > 50) {
       header.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1)";
@@ -818,7 +761,6 @@ function initScrollEffects() {
     }
   });
 
-  // Back to top functionality
   backToTop.addEventListener("click", function () {
     window.scrollTo({
       top: 0,
@@ -826,7 +768,6 @@ function initScrollEffects() {
     });
   });
 
-  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -848,24 +789,19 @@ function initScrollEffects() {
   });
 }
 
-// Loading Screen
 function initLoadingScreen() {
   const loadingScreen = document.querySelector(".loading-screen");
 
-  // Simulate loading time
   setTimeout(() => {
     loadingScreen.classList.add("hidden");
 
-    // Remove from DOM after animation completes
     setTimeout(() => {
       loadingScreen.remove();
     }, 500);
   }, 2000);
 }
 
-// Animations
 function initAnimations() {
-  // Intersection Observer for scroll animations
   const observerOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
@@ -879,7 +815,6 @@ function initAnimations() {
     });
   }, observerOptions);
 
-  // Observe elements for animation
   const animateElements = document.querySelectorAll(
     ".product-card, .collection-card, .feature-item, .blog-card, .testimonial-card"
   );
@@ -888,7 +823,6 @@ function initAnimations() {
     observer.observe(el);
   });
 
-  // Add CSS for animations
   const style = document.createElement("style");
   style.textContent = `
         .animate-on-scroll {
@@ -912,3 +846,5 @@ function initAnimations() {
     `;
   document.head.appendChild(style);
 }
+// End
+// -------------------------------------------------->

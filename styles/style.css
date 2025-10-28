@@ -1,3 +1,4 @@
+/* CSS  */
 :root {
   /* Default Theme */
   --primary-color: #e02c6d;
@@ -334,7 +335,7 @@ a {
   display: block;
 }
 
-/* Header & Navigation */
+/* Header and Navigation */
 .header {
   position: fixed;
   top: 0;
@@ -1847,7 +1848,7 @@ a {
   color: white;
 }
 
-/* Back to Top Button */
+/* Button */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -1959,7 +1960,7 @@ a {
   }
 }
 
-/* Responsive Styles */
+/* Responsive */
 @media screen and (max-width: 1200px) {
   .hero-container {
     gap: 2rem;
@@ -2159,3 +2160,5 @@ a {
     display: none;
   }
 }
+
+/* CSS End  */
