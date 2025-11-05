@@ -1,4 +1,4 @@
-// JavaScript Full Code Here
+// JavaScript Full Code Here:
 // ----------------------------------------------------------------------------------------->
 document.addEventListener("DOMContentLoaded", function () {
   initThemeSelector();
