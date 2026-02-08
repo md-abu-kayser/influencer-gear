@@ -1,5 +1,5 @@
 // JavaScript Full Code Here:
-// ----------------------------------------------------------------------------------------->
+// -------------------------------------------------------------------------->
 document.addEventListener("DOMContentLoaded", function () {
   initThemeSelector();
   initDarkMode();
@@ -261,7 +261,7 @@ function initProductFilters() {
                         ${
                           product.originalPrice
                             ? `<span class="original-price">$${product.originalPrice.toFixed(
-                                2
+                                2,
                               )}</span>`
                             : ""
                         }
@@ -596,7 +596,7 @@ function initCart() {
 
     const total = cartItems.reduce(
       (sum, item) => sum + item.price * item.quantity,
-      0
+      0,
     );
     totalPrice.textContent = `$${total.toFixed(2)}`;
   }
@@ -816,7 +816,7 @@ function initAnimations() {
   }, observerOptions);
 
   const animateElements = document.querySelectorAll(
-    ".product-card, .collection-card, .feature-item, .blog-card, .testimonial-card"
+    ".product-card, .collection-card, .feature-item, .blog-card, .testimonial-card",
   );
   animateElements.forEach((el) => {
     el.classList.add("animate-on-scroll");
@@ -847,4 +847,3 @@ function initAnimations() {
   document.head.appendChild(style);
 }
 // End
-// -------------------------------------------------->
